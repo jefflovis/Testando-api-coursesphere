@@ -4,6 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { format, parseISO } from "date-fns";
+import {API_BASE_URL} from "../services/api";
 import {
   Box,
   Typography,
@@ -25,7 +26,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchCursos = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/courses");
+        const res = await axios.get(`${API_BASE_URL}/courses`);
         const meusCursos = res.data.filter(
           (curso) =>
             Number(curso.creator_id) === Number(user.id) ||

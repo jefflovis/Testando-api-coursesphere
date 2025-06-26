@@ -15,6 +15,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useAuth } from "../context/AuthContext";
+import {API_BASE_URL} from "../services/api";
 
 const schema = yup.object().shape({
   title: yup.string().required("Título obrigatório").min(3),

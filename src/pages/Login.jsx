@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {API_BASE_URL} from "../services/api";
 
 // MUI
 import {
@@ -40,6 +41,7 @@ export default function Login() {
       const res = await axios.get(
         `${API_BASE_URL}/users?email=${data.email}&password=${data.password}`
       );
+    
       if (res.data.length > 0) {
         login(res.data[0]);
         toast.success("Login bem-sucedido!");
@@ -49,6 +51,7 @@ export default function Login() {
       }
     } catch (err) {
       toast.error("Erro na autenticação");
+      console.log(`${data.email}`);
     }
   };
 

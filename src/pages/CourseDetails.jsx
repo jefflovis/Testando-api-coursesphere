@@ -22,6 +22,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
 import { format, parseISO } from "date-fns";
+import {API_BASE_URL} from "../services/api";
 
 export default function CourseDetails() {
   const { user } = useAuth();
@@ -56,7 +57,7 @@ export default function CourseDetails() {
 
         setCurso(cursoData);
 
-        const aulasRes = await axios.get(`${API_BASE_URL}/lessons");
+        const aulasRes = await axios.get(`${API_BASE_URL}/lessons`);
         const aulasDoCurso = aulasRes.data.filter(
           (aula) => aula.course_id === id
         );

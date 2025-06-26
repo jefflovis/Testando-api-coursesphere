@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
+import {API_BASE_URL} from "../services/api";
 
 const schema = yup.object().shape({
   name: yup.string().required("Nome obrigatório").min(3),
