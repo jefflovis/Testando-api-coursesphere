@@ -97,7 +97,7 @@ export default function LessonForm() {
         });
         toast.success("Aula atualizada");
       } else {
-        await axios.post("${API_BASE_URL}/lessons", {
+        await axios.post(`${API_BASE_URL}/lessons`, {
           ...data,
           course_id: courseId,
           creator_id: user.id,
