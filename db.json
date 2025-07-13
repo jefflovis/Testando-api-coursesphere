@@ -17,7 +17,13 @@
       "name": "Well",
       "email": "well@sesi.com",
       "password": "123456"
-    }
+    },
+    {
+      "id": "4",
+      "name": "Priscyla",
+      "email": "pry@teste.com",
+      "password": "123456"
+    },
   ],
   "courses": [
     {
